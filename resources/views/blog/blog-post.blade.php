@@ -184,8 +184,8 @@
         </div>
     </div>
     <!-- ##### Breadcumb Area End ##### -->
-
-    <!-- ##### Blog Area Start ##### -->
+    <?php $recipes = json_decode(json_encode($recipes), true);?>
+    <!-- ##### Blog AreStart ##### -->
     <div class="blog-area section-padding-80">
         <div class="container">
             <div class="row">
@@ -193,65 +193,26 @@
                     <div class="blog-posts-area">
 
                         <!-- Single Blog Area -->
-                        <div class="single-blog-area mb-80">
-                            <!-- Thumbnail -->
-                            <div class="blog-thumbnail">
-                                <img src="img/blog-img/1.jpg" alt="">
-                                <!-- Post Date -->
-                                <div class="post-date">
-                                    <a href="#"><span>05</span>April <br> 2018</a>
+                        @foreach ($recipes['meals'] as $item)
+                            <div class="single-blog-area mb-80">
+                                <!-- Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <img src="img/blog-img/1.jpg" alt="">
+                                    <!-- Post Date -->
+                                    <div class="post-date">
+                                        <a href="#"><span>05</span>April <br> 2018</a>
+                                    </div>
+                                </div>
+                                <!-- Content -->
+                                <div class="blog-content">
+                                    <a href="#" class="post-title">{{$item['strMeal']}}</a>
+                                    <div class="meta-data">by <a href="#">Maria Williams</a> in <a href="#">Restaurants</a>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                                    <a href="#" class="btn delicious-btn mt-30">Read More</a>
                                 </div>
                             </div>
-                            <!-- Content -->
-                            <div class="blog-content">
-                                <a href="#" class="post-title">How to find amazing restaurants in your city</a>
-                                <div class="meta-data">by <a href="#">Maria Williams</a> in <a href="#">Restaurants</a>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                                <a href="#" class="btn delicious-btn mt-30">Read More</a>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Area -->
-                        <div class="single-blog-area mb-80">
-                            <!-- Thumbnail -->
-                            <div class="blog-thumbnail">
-                                <img src="img/blog-img/2.jpg" alt="">
-                                <!-- Post Date -->
-                                <div class="post-date">
-                                    <a href="#"><span>05</span>April <br> 2018</a>
-                                </div>
-                            </div>
-                            <!-- Content -->
-                            <div class="blog-content">
-                                <a href="#" class="post-title">10 tips to live a healty life</a>
-                                <div class="meta-data">by <a href="#">Maria Williams</a> in <a href="#">Restaurants</a>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                                <a href="#" class="btn delicious-btn mt-30">Read More</a>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Area -->
-                        <div class="single-blog-area mb-80">
-                            <!-- Thumbnail -->
-                            <div class="blog-thumbnail">
-                                <img src="img/blog-img/3.jpg" alt="">
-                                <!-- Post Date -->
-                                <div class="post-date">
-                                    <a href="#"><span>05</span>April <br> 2018</a>
-                                </div>
-                            </div>
-                            <!-- Content -->
-                            <div class="blog-content">
-                                <a href="#" class="post-title">5 Tips on how to cook the best hamburger</a>
-                                <div class="meta-data">by <a href="#">Maria Williams</a> in <a href="#">Restaurants</a>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                                <a href="#" class="btn delicious-btn mt-30">Read More</a>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
 
                     <nav aria-label="Page navigation example">
