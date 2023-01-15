@@ -25,9 +25,7 @@ Route::get('/contact', function () {
 Route::get('/elements', function () {
     return view('blog.elements');
 });
-Route::get('/blog-post', function () {
-    return view('blog.blog-post');
-});
+
 Route::get('/recipe-post', function () {
     return view('blog.recipe-post');
 });
